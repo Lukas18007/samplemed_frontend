@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Postagem</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="https://images.squarespace-cdn.com/content/v1/60917fd9f355d7205af2137c/88a5e07c-e232-47eb-bb2a-96b92c7571cd/favicon.ico?format=100w">
+</head>
+<body>
+    <header>
+        <h1>Samplemed Blog</h1>
+        <a href="cx_entrada.html" class="btn-home">Ir para Timeline</a>
+    </header>
+    <div class="container">
+        <h1>Nova Postagem</h1>
+        <form action="" method="post" id="postForm">
+            <label for="title">Título:</label>
+            <input type="text" id="title" name="title" required>
+
+            <label for="content">Conteúdo:</label>
+            <textarea id="content" name="content" rows="5" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</body>
+</html>
+<script>
+    document.getElementById('postForm').addEventListener('submit', async function(event) {
+        event.preventDefault();
+
+        const title = document.getElementById('title').value;
+        const content = document.getElementById('content').value;
+
+        try {
+            const response = await fetch('http://localhost:8765/api/posts.json', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    title: title,
+                    body: content
+                })
+            });
+
+            const data = await response.json();
+            console.log('Success:', data);
+            alert('Cadastrado com sucesso!');
+            window.location.reload();
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    });
+</script>

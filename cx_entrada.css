@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(226, 202, 248);
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #ca00ca;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header .btn-home {
+    background-color: #fff;
+    color: #ca00ca;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+header .btn-home:hover {
+    background-color: #f0f0f0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.posts {
+    margin-top: 20px;
+}
+
+.post {
+    padding: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+}
+
+.post:last-child {
+    border-bottom: none;
+}
+
+.post h2 {
+    margin: 0 0 10px;
+    color: #ca00ca;
+}
+
+.post p {
+    margin: 0;
+    color: #555;
+}
+
+.post time {
+    display: block;
+    margin-top: 10px;
+    color: #999;
+    font-size: 0.9em;
+}
+
+.post button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.post button:hover {
+    background-color: #ff1a1a;
+}
